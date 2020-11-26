@@ -14,6 +14,14 @@ class Controller extends BaseController
 
     public function index()
     {
-        return response(file_get_contents(public_path('img/austinturkey.jpg')),'200',["Content-Type"=>'image/png']);
+        if(now('America/Chicago')->daysUntil('2020-12-25 00:00:00')->count() == 0)
+        {
+            return response(file_get_contents(public_path('img/austingrinch.png')),'200',["Content-Type"=>'image/png']);
+        }
+        elseif(now('America/Chicago')->daysUntil('2020-11-26 00:00:00')->count() == 0)
+        {
+            return response(file_get_contents(public_path('img/austinturkey.png')),'200',["Content-Type"=>'image/png']);
+        }
+        return response(file_get_contents(public_path('img/austin.png')),'200',["Content-Type"=>'image/png']);
     }
 }

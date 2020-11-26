@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb23b78-c92a-4232-8221-17a76399a222" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/austingrinch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/austinturkey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/austinturkey.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,11 +130,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kkmWzm95jrhwexBA6lkM3ROdee" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -163,12 +171,15 @@
       <option name="presentableId" value="Default" />
       <updated>1606253000193</updated>
       <workItem from="1606253001662" duration="2046000" />
-      <workItem from="1606416067960" duration="113000" />
+      <workItem from="1606416067960" duration="1970000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1606328104576">
@@ -191,9 +202,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1556" height="218" key="GridCell.Tab.0.right/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606328106945" />
-    <state x="456" y="190" key="run.anything.popup" timestamp="1606253012251">
+    <state x="456" y="190" width="672" height="677" key="run.anything.popup" timestamp="1606418086890">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="190" key="run.anything.popup/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606253012251" />
+    <state x="456" y="190" width="672" height="677" key="run.anything.popup/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606418086890" />
   </component>
 </project>
