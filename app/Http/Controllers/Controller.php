@@ -14,6 +14,6 @@ class Controller extends BaseController
 
     public function index()
     {
-        return response(file_get_contents(public_path('img/austinturkey.png')),'200',["Content-Type"=>'image/png']);
+        return response(file_get_contents(public_path('img/austinturkey.jpg')),'200',["Content-Type"=>'image/png']);
     }
 }
