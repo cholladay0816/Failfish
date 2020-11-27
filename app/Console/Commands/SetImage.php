@@ -68,10 +68,22 @@ class SetImage extends Command
         }
         else
         {
-            $this->comment('Today is a normal day');
-            $image = Image::where('name', '=', 'austin')->first();
-            $image->active = 1;
-            $image->save();
+            $weekday = strtolower(now()->dayName);
+            $this->comment('Today is a normal '.$weekday);
+
+
+            $daily = Image::where('name', '=', 'austin'.strtolower(now()->dayName))->first();
+            if(isset($daily))
+            {
+                $daily->active = 1;
+                $daily->save();
+            }
+            else
+            {
+                $image = Image::where('name', '=', 'austin')->first();
+                $image->active = 1;
+                $image->save();
+            }
         }
         return 0;
     }
