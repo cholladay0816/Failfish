@@ -28,11 +28,20 @@ class DatabaseSeeder extends Seeder
         $monday = new Image(['name'=>'austinmonday']);
         $monday->save();
 
+        $tuesday = new Image(['name'=>'austintuesday']);
+        $tuesday->save();
+
         $wednesday = new Image(['name'=>'austinwednesday']);
         $wednesday->save();
 
+        $thursday = new Image(['name'=>'austinthursday']);
+        $thursday->save();
+
         $friday = new Image(['name'=>'austinfriday']);
         $friday->save();
+
+        $saturday = new Image(['name'=>'austinsaturday']);
+        $saturday->save();
 
     }
 }
