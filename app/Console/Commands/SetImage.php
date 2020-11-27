@@ -41,6 +41,8 @@ class SetImage extends Command
         $christmas = new \Illuminate\Support\Carbon('2020-12-25 00:00:00', 'America/Chicago');
         $thanksgiving = new \Illuminate\Support\Carbon(strtotime("november ".now()->year." fourth thursday"),
             'America/Chicago');
+        $easter = new \Illuminate\Support\Carbon(strtotime("last sunday of march ".now()->year),
+            'America/Chicago');
         $images = Image::all();
         foreach ($images as $image)
         {
@@ -58,6 +60,13 @@ class SetImage extends Command
         {
             $this->comment('Today is Thanksgiving');
             $image = Image::where('name', '=', 'austinturkey')->first();
+            $image->active = 1;
+            $image->save();
+        }
+        if($easter->isCurrentDay())
+        {
+            $this->comment('Today is Easter');
+            $image = Image::where('name', '=', 'austineaster')->first();
             $image->active = 1;
             $image->save();
         }

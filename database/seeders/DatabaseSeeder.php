@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         $thanksgiving->save();
         $christmas = new Image(['name'=>'austingrinch']);
         $christmas->save();
+        $easter = new Image(['name'=>'austineaster']);
+        $easter->save();
 
         $sunday = new Image(['name'=>'austinsunday']);
         $sunday->save();

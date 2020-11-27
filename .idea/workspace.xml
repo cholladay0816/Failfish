@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb23b78-c92a-4232-8221-17a76399a222" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/austineaster.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/SetImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SetImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +172,7 @@
       <workItem from="1606253001662" duration="2046000" />
       <workItem from="1606416067960" duration="2826000" />
       <workItem from="1606497221457" duration="5889000" />
-      <workItem from="1606513087432" duration="76000" />
+      <workItem from="1606513087432" duration="538000" />
     </task>
     <servers />
   </component>
