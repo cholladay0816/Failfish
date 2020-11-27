@@ -39,13 +39,8 @@ class SetImage extends Command
     public function handle()
     {
         $christmas = new \Illuminate\Support\Carbon('2020-12-25 00:00:00', 'America/Chicago');
-        $thanksgiving = new \Illuminate\Support\Carbon('2020-11-1','America/Chicago');
-        $thanksgiving->timezone = 'America/Chicago';
-        $thanksgiving->year(now()->year);
-        $thanksgiving->month(11);
-        $thanksgiving->addWeeks(3);
-        $thanksgiving->addDays(4);
-
+        $thanksgiving = new \Illuminate\Support\Carbon(strtotime("november ".now()->year." fourth thursday"),
+            'America/Chicago');
         $images = Image::all();
         foreach ($images as $image)
         {
