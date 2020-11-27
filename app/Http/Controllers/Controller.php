@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,14 +15,7 @@ class Controller extends BaseController
 
     public function index()
     {
-        if(now('America/Chicago')->daysUntil('2020-12-25 00:00:00')->count() == 0)
-        {
-            return response(file_get_contents(public_path('img/austingrinch.png')),'200',["Content-Type"=>'image/png']);
-        }
-        elseif(now('America/Chicago')->daysUntil('2020-11-26 00:00:00')->count() == 0)
-        {
-            return response(file_get_contents(public_path('img/austinturkey.png')),'200',["Content-Type"=>'image/png']);
-        }
-        return response(file_get_contents(public_path('img/austin.png')),'200',["Content-Type"=>'image/png']);
+        $image = Image::where('active', 1)->first();
+        return response(file_get_contents(public_path('img/'.$image->name.'.png')),'200',["Content-Type"=>'image/png']);
     }
 }
