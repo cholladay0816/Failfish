@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         $default = new Image(['name'=>'austin', 'active'=>1]);
         $default->save();
         $thanksgiving = new Image(['name'=>'austinturkey']);
@@ -44,6 +43,5 @@ class DatabaseSeeder extends Seeder
 
         $saturday = new Image(['name'=>'austinsaturday']);
         $saturday->save();
-
     }
 }
