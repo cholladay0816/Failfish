@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b57dd6d1-0a62-4250-a085-cce80b063988" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SuspensionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VoteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Suspension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Vote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SuspensionFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/VideoFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/VoteFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_202603_create_videos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_202829_create_votes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_28_203539_create_suspensions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/video/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="b57dd6d1-0a62-4250-a085-cce80b063988" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606592252311</updated>
       <workItem from="1606592253340" duration="2274000" />
-      <workItem from="1606594817929" duration="1872000" />
+      <workItem from="1606594817929" duration="2246000" />
     </task>
     <servers />
   </component>
