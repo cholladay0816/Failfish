@@ -17,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class, 'index']);
 Route::get('/austinoftheday', [\App\Http\Controllers\ImageController::class, 'showDaily']);
 
+Route::group(['auth:sanctum', 'verified'], function() {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('video/new', [\App\Http\Controllers\VideoController::class, 'create']);
+    Route::post('video/new', [\App\Http\Controllers\VideoController::class, 'store']);
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -4,14 +4,14 @@
         <h2 class="text-gray-400 text-xl font-semibold">The official host of all things failfish.</h2>
     </div>
 
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-5xl mx-auto">
 
         <div class="bg-white p-5 mx-auto max-w-5xl mt-10 rounded shadow-lg">
             <h3 class="text-center font-bold text-4xl py-2">Austin of The Day</h3>
             <img class="object-contain max-h-screen rounded-2xl mx-auto" src="{{asset('/img/'.$daily->name.'.png')}}"/>
         </div>
         <inc></inc>
-        <div class="p-5 mt-10 max-w-5xl mx-auto">
+        <div class="mt-10 mx-auto">
             <h1 class="bg-gray-900 rounded-t text-white text-center font-bold text-4xl py-2">
                 What is Failfish.com?
             </h1>
