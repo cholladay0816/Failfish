@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'index']);
-Route::get('/austinoftheday', [\App\Http\Controllers\ImageController::class, 'showDaily']);
+// Route::get('/', [Controller::class, 'index']);
+// Route::get('/austinoftheday', [\App\Http\Controllers\ImageController::class, 'showDaily']);
+Route::get('/', [Controller::class, 'showDaily']);
 
 Route::group(['auth:sanctum', 'verified'], function() {
 
