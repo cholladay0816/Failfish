@@ -17,11 +17,20 @@
             </h1>
             <div class="bg-white rounded-b p-3">
                 <p>
-                Failfish is a catalog of the most FAIL people on the internet, all centralized into one convenient site.
-                You can find the BIGGEST FAILS here. VIRALHOG? VINE? These websites SUCK for looking at FAILS!  FACEBOOK LIVE?
-                WHY WOULD YOU GO TO FAILBOOK LIVE WHEN YOU COULD BE ON FAILFISH.COM!
+                    Failfish is a catalog of the most FAIL people on the internet, all centralized into one convenient site.
+                    You can find the BIGGEST FAILS here. VIRALHOG? VINE? These websites SUCK for looking at FAILS!  FACEBOOK LIVE?
+                    WHY WOULD YOU GO TO FAILBOOK LIVE WHEN YOU COULD BE ON FAILFISH.COM!
                 </p>
                 <span class="text-xs text-gray-400">failfish live coming 2021 <span class="text-gray-100 text-2xs"> (maybe)</span></span>
+            </div>
+        </div>
+        <inc></inc>
+        <div class="mt-10 mx-auto">
+            <h1 class="bg-gray-900 rounded-t text-white text-center font-bold text-4xl py-2">
+                Fail of The Day
+            </h1>
+            <div class="bg-white rounded-b p-3">
+
             </div>
         </div>
     </div>

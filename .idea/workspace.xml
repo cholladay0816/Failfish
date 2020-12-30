@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b57dd6d1-0a62-4250-a085-cce80b063988" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Attendize" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -173,7 +174,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606592252311</updated>
       <workItem from="1606592253340" duration="2274000" />
-      <workItem from="1606594817929" duration="2663000" />
+      <workItem from="1606594817929" duration="4574000" />
+      <workItem from="1609364055174" duration="90000" />
     </task>
     <servers />
   </component>
@@ -184,21 +186,29 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1556" height="218" key="GridCell.Tab.0.bottom" timestamp="1606592490033">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="-1020" y="204" key="FileChooserDialogImpl" timestamp="1606787750937">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
+    <state x="-1020" y="204" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1600.860@-1600.0.1600.860" timestamp="1606787750937" />
+    <state width="1556" height="218" key="GridCell.Tab.0.bottom" timestamp="1606787753265">
+      <screen x="-1600" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="218" key="GridCell.Tab.0.bottom/-1600.0.1600.860/0.0.1600.860@-1600.0.1600.860" timestamp="1606787753265" />
     <state width="1556" height="218" key="GridCell.Tab.0.bottom/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606592490033" />
-    <state width="1556" height="218" key="GridCell.Tab.0.center" timestamp="1606592490033">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1556" height="218" key="GridCell.Tab.0.center" timestamp="1606787753265">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
+    <state width="1556" height="218" key="GridCell.Tab.0.center/-1600.0.1600.860/0.0.1600.860@-1600.0.1600.860" timestamp="1606787753265" />
     <state width="1556" height="218" key="GridCell.Tab.0.center/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606592490033" />
-    <state width="1556" height="218" key="GridCell.Tab.0.left" timestamp="1606592490033">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1556" height="218" key="GridCell.Tab.0.left" timestamp="1606787753265">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
+    <state width="1556" height="218" key="GridCell.Tab.0.left/-1600.0.1600.860/0.0.1600.860@-1600.0.1600.860" timestamp="1606787753265" />
     <state width="1556" height="218" key="GridCell.Tab.0.left/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606592490033" />
-    <state width="1556" height="218" key="GridCell.Tab.0.right" timestamp="1606592490033">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1556" height="218" key="GridCell.Tab.0.right" timestamp="1606787753265">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
+    <state width="1556" height="218" key="GridCell.Tab.0.right/-1600.0.1600.860/0.0.1600.860@-1600.0.1600.860" timestamp="1606787753265" />
     <state width="1556" height="218" key="GridCell.Tab.0.right/-1600.0.1600.860/0.0.1600.860@0.0.1600.860" timestamp="1606592490033" />
     <state x="635" y="352" key="NewPhpFileDialog" timestamp="1606596045912">
       <screen x="0" y="0" width="1600" height="860" />
