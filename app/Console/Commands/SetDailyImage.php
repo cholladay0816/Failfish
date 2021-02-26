@@ -39,7 +39,7 @@ class SetDailyImage extends Command
     public function handle()
     {
         $christmas = now()->month(12)->day(25);
-        $thanksgiving = now()->month(11)->week(4, 4);
+        $thanksgiving = now()->month(11)->lastOfMonth(4);
         $easter = Image::calculateEaster();
         $images = Image::all();
         foreach ($images as $image) {
