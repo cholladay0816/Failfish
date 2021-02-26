@@ -43,7 +43,7 @@ class ImageFeatureTest extends TestCase
     {
         // Set up database and set date to 1st of month
         $this->seed();
-        $this->travelTo(now()->month(11)->week(4, 4));
+        $this->travelTo(now()->month(11)->lastOfMonth(4));
         $this->artisan('db:setdailyimage');
 
         // Assert the active image is austinturkey
