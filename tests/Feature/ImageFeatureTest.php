@@ -26,6 +26,32 @@ class ImageFeatureTest extends TestCase
     }
 
     /** @test */
+    public function it_is_set_on_christmas()
+    {
+        // Set up database and set date to 1st of month
+        $this->seed();
+        $this->travelTo(now()->month(12)->day(25));
+        $this->artisan('db:setdailyimage');
+
+        // Assert the active image is austingrinch
+        $image = Image::where('active', '1')->first();
+        $this->assertEquals('austingrinch', $image->name);
+    }
+
+    /** @test */
+    public function it_is_set_on_easter()
+    {
+        // Set up database and set date to 1st of month
+        $this->seed();
+        $this->travelTo(Image::calculateEaster());
+        $this->artisan('db:setdailyimage');
+
+        // Assert the active image is austineaster
+        $image = Image::where('active', '1')->first();
+        $this->assertEquals('austineaster', $image->name);
+    }
+
+    /** @test */
     public function it_is_set_on_weekdays()
     {
         // We use a hard coded date here to make sure holidays don't fail test
@@ -68,7 +94,5 @@ class ImageFeatureTest extends TestCase
         $this->artisan('db:setdailyimage');
         $image = Image::where('active', '1')->first();
         $this->assertEquals('austinsaturday', $image->name);
-
-
     }
 }
