@@ -14,34 +14,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $default = new Image(['name'=>'austin', 'active'=>1]);
-        $default->save();
-        $thanksgiving = new Image(['name'=>'austinturkey']);
-        $thanksgiving->save();
-        $christmas = new Image(['name'=>'austingrinch']);
-        $christmas->save();
-        $easter = new Image(['name'=>'austineaster']);
-        $easter->save();
+        Image::create(['name'=>'austin', 'active' => 1]);
+        Image::create(['name'=>'austinturkey']);
+        Image::create(['name'=>'austingrinch']);
+        Image::create(['name'=>'austineaster']);
+        Image::create(['name'=>'austinfirst']);
 
-        $sunday = new Image(['name'=>'austinsunday']);
-        $sunday->save();
-
-        $monday = new Image(['name'=>'austinmonday']);
-        $monday->save();
-
-        $tuesday = new Image(['name'=>'austintuesday']);
-        $tuesday->save();
-
-        $wednesday = new Image(['name'=>'austinwednesday']);
-        $wednesday->save();
-
-        $thursday = new Image(['name'=>'austinthursday']);
-        $thursday->save();
-
-        $friday = new Image(['name'=>'austinfriday']);
-        $friday->save();
-
-        $saturday = new Image(['name'=>'austinsaturday']);
-        $saturday->save();
+        Image::create(['name'=>'austinsunday']);
+        Image::create(['name'=>'austinmonday']);
+        Image::create(['name'=>'austintuesday']);
+        Image::create(['name'=>'austinwednesday']);
+        Image::create(['name'=>'austinthursday']);
+        Image::create(['name'=>'austinfriday']);
+        Image::create(['name'=>'austinsaturday']);
     }
 }
