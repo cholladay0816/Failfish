@@ -38,15 +38,9 @@ class SetDailyImage extends Command
      */
     public function handle()
     {
-        $christmas = new \Illuminate\Support\Carbon('2020-12-25 00:00:00', 'America/Chicago');
-        $thanksgiving = new \Illuminate\Support\Carbon(
-            strtotime("november ".now()->year." fourth thursday"),
-            'America/Chicago'
-        );
-        $easter = new \Illuminate\Support\Carbon(
-            strtotime("last sunday of march ".now()->year),
-            'America/Chicago'
-        );
+        $christmas = now()->month(12)->day(25);
+        $thanksgiving = now()->month(11)->week(4, 4);
+        $easter = Image::calculateEaster();
         $images = Image::all();
         foreach ($images as $image) {
             $image->active = 0;
