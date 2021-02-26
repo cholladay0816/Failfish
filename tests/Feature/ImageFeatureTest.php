@@ -39,6 +39,19 @@ class ImageFeatureTest extends TestCase
     }
 
     /** @test */
+    public function it_is_set_on_thanksgiving()
+    {
+        // Set up database and set date to 1st of month
+        $this->seed();
+        $this->travelTo(now()->month(11)->week(4, 4));
+        $this->artisan('db:setdailyimage');
+
+        // Assert the active image is austinturkey
+        $image = Image::where('active', '1')->first();
+        $this->assertEquals('austinturkey', $image->name);
+    }
+
+    /** @test */
     public function it_is_set_on_easter()
     {
         // Set up database and set date to 1st of month
