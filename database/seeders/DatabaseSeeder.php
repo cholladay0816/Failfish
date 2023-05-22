@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Image::create(['name'=>'austin']);
+        Image::create(['name'=>'austin', 'active' => 1]);
         Image::create(['name'=>'austinturkey']);
         Image::create(['name'=>'austingrinch']);
         Image::create(['name'=>'austineaster']);
@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
         Image::create(['name'=>'austinfriday']);
         Image::create(['name'=>'austinsaturday']);
 
-        Image::create(['name'=>'jerma', 'active' => 1]);
+        Image::create(['name'=>'jerma']);
     }
 }

@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-//         $schedule->command('db:setdailyimage')->everyThreeHours();
+         $schedule->command('db:setdailyimage')->everyThreeHours();
     }
 
     /**
