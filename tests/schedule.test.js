@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { easterSunday, imageForDate } from '../src/schedule.js';
+import { easterSunday, imageForDate, secondsUntilNextCentralMidnight } from '../src/schedule.js';
 import worker from '../src/worker.js';
 
 const pick = (date) => imageForDate(new Date(`${date}T18:00:00Z`));
@@ -28,9 +28,13 @@ test('day changes at midnight Central in both standard and daylight time', () =>
   assert.equal(imageForDate(new Date('2026-01-02T06:00:00Z')), 'austinfriday.png');
   assert.equal(imageForDate(new Date('2026-07-02T04:59:59Z')), 'austinfirst.jpg');
   assert.equal(imageForDate(new Date('2026-07-02T05:00:00Z')), 'austinthursday.png');
+  assert.equal(secondsUntilNextCentralMidnight(new Date('2026-01-02T05:59:59Z')), 1);
+  assert.equal(secondsUntilNextCentralMidnight(new Date('2026-07-02T04:59:59Z')), 1);
+  assert.equal(secondsUntilNextCentralMidnight(new Date('2026-03-08T06:00:00Z')), 23 * 60 * 60);
+  assert.equal(secondsUntilNextCentralMidnight(new Date('2026-11-01T05:00:00Z')), 25 * 60 * 60);
 });
 
-test('root and daily URL serve the selected image and prevent long caching', async () => {
+test('root and daily URL serve the selected image and expire at Central midnight', async () => {
   const paths = [];
   const env = { ASSETS: { fetch: async (request) => {
     paths.push(new URL(request.url).pathname);
@@ -39,7 +43,8 @@ test('root and daily URL serve the selected image and prevent long caching', asy
   const response = await worker.fetch(new Request('https://failfish.com/daily.png'), env);
   assert.equal(response.status, 200);
   assert.equal(paths[0], `/img/${imageForDate(new Date())}`);
-  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  const ttl = Number(response.headers.get('Cache-Control')?.match(/^public, max-age=(\d+)$/)?.[1]);
+  assert.ok(ttl > 0 && ttl <= 25 * 60 * 60);
   assert.equal((await worker.fetch(new Request('https://failfish.com/daily.png', { method: 'POST' }), env)).status, 405);
   const root = await worker.fetch(new Request('https://failfish.com/'), env);
   assert.equal(root.headers.get('Content-Type'), 'image/png');

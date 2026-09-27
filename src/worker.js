@@ -1,4 +1,4 @@
-import { imageForDate } from './schedule.js';
+import { imageForDate, secondsUntilNextCentralMidnight } from './schedule.js';
 
 export default {
   async fetch(request, env) {
@@ -10,14 +10,15 @@ export default {
       return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
     }
 
-    const selected = imageForDate(new Date());
+    const now = new Date();
+    const selected = imageForDate(now);
     const assetUrl = new URL(`/img/${selected}`, url);
     const asset = await env.ASSETS.fetch(new Request(assetUrl, { method: request.method }));
     if (!asset.ok) return asset;
 
     const headers = new Headers(asset.headers);
-    // The URL is stable; never reuse yesterday's response past Central midnight.
-    headers.set('Cache-Control', 'no-store');
+    // Workers Cache serves repeat requests before invoking this Worker.
+    headers.set('Cache-Control', `public, max-age=${secondsUntilNextCentralMidnight(now)}`);
     headers.set('X-Content-Type-Options', 'nosniff');
     return new Response(asset.body, { status: asset.status, headers });
   },

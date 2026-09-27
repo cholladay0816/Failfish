@@ -3,6 +3,7 @@
   "name": "failfish",
   "main": "./src/worker.js",
   "compatibility_date": "2026-09-26",
+  "cache": { "enabled": true },
   "routes": [
     { "pattern": "failfish.com/*", "zone_id": "5bd134d351b6d8bbd0b9d429250d75c2" },
     { "pattern": "www.failfish.com/*", "zone_id": "5bd134d351b6d8bbd0b9d429250d75c2" }

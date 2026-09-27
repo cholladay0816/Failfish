@@ -7,6 +7,32 @@ const centralDate = new Intl.DateTimeFormat('en-US', {
   timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric',
 });
 
+function centralParts(date) {
+  return Object.fromEntries(
+    centralDate.formatToParts(date).filter(part => part.type !== 'literal').map(part => [part.type, Number(part.value)]),
+  );
+}
+
+export function secondsUntilNextCentralMidnight(date) {
+  const today = centralParts(date);
+  const currentSecond = Math.floor(date.getTime() / 1000);
+  let low = currentSecond;
+  let high = currentSecond + 27 * 60 * 60;
+
+  // Find the first UTC second belonging to tomorrow in Chicago. This also
+  // handles the 23- and 25-hour days around daylight saving changes.
+  while (low + 1 < high) {
+    const middle = Math.floor((low + high) / 2);
+    const candidate = centralParts(new Date(middle * 1000));
+    if (candidate.year === today.year && candidate.month === today.month && candidate.day === today.day) {
+      low = middle;
+    } else {
+      high = middle;
+    }
+  }
+  return Math.max(0, Math.floor((high * 1000 - date.getTime()) / 1000));
+}
+
 // Gregorian computus: unlike the old approximation, this also works in years
 // when Easter falls in late April.
 export function easterSunday(year) {
@@ -28,10 +54,7 @@ export function easterSunday(year) {
 }
 
 export function imageForDate(date) {
-  const parts = Object.fromEntries(
-    centralDate.formatToParts(date).filter(part => part.type !== 'literal').map(part => [part.type, Number(part.value)]),
-  );
-  const { year, month, day } = parts;
+  const { year, month, day } = centralParts(date);
   const weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
 
   if (month === 12 && day === 25) return 'austingrinch.png';

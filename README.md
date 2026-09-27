@@ -23,4 +23,4 @@ The Worker is configured on `failfish.com/*` and `www.failfish.com/*`. Both host
 4. First day of the month: `austinfirst.jpg`
 5. Otherwise: the appropriate weekday image
 
-The daily image response is not cached, so a new request after midnight receives the new day's image without a scheduled job. Change the schedule in `src/schedule.js` and the available files in `public/img/`.
+Workers Cache serves repeat requests without running the Worker. Each image response expires at the next Central midnight, including daylight-saving changes; the first request after expiry refreshes it. A single invocation per day globally is not guaranteed: each cache miss (for example a new location, URL variation, or deployment) can invoke the Worker. No daily cron or database is needed. Change the schedule in `src/schedule.js` and the available files in `public/img/`.
