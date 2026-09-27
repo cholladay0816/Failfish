@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "failfish",
+  "main": "./src/worker.js",
+  "compatibility_date": "2026-09-26",
+  "routes": [
+    { "pattern": "failfish.com/*", "zone_id": "5bd134d351b6d8bbd0b9d429250d75c2" },
+    { "pattern": "www.failfish.com/*", "zone_id": "5bd134d351b6d8bbd0b9d429250d75c2" }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/daily.png"]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "traces": { "enabled": true }
+  }
+}
