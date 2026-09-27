@@ -3,7 +3,7 @@ import { imageForDate } from './schedule.js';
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.pathname !== '/daily.png') {
+    if (url.pathname !== '/' && url.pathname !== '/daily.png') {
       return env.ASSETS.fetch(request);
     }
     if (request.method !== 'GET' && request.method !== 'HEAD') {
@@ -16,8 +16,8 @@ export default {
     if (!asset.ok) return asset;
 
     const headers = new Headers(asset.headers);
-    // The URL is stable, so never cache it across a UTC date boundary.
-    headers.set('Cache-Control', 'public, max-age=60, must-revalidate');
+    // The URL is stable; never reuse yesterday's response past Central midnight.
+    headers.set('Cache-Control', 'no-store');
     headers.set('X-Content-Type-Options', 'nosniff');
     return new Response(asset.body, { status: asset.status, headers });
   },

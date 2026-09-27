@@ -3,6 +3,10 @@ const weekdays = [
   'austinthursday', 'austinfriday', 'austinsaturday',
 ];
 
+const centralDate = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/Chicago', year: 'numeric', month: 'numeric', day: 'numeric',
+});
+
 // Gregorian computus: unlike the old approximation, this also works in years
 // when Easter falls in late April.
 export function easterSunday(year) {
@@ -24,9 +28,11 @@ export function easterSunday(year) {
 }
 
 export function imageForDate(date) {
-  const year = date.getUTCFullYear();
-  const month = date.getUTCMonth() + 1;
-  const day = date.getUTCDate();
+  const parts = Object.fromEntries(
+    centralDate.formatToParts(date).filter(part => part.type !== 'literal').map(part => [part.type, Number(part.value)]),
+  );
+  const { year, month, day } = parts;
+  const weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
 
   if (month === 12 && day === 25) return 'austingrinch.png';
 
@@ -39,5 +45,5 @@ export function imageForDate(date) {
   if (month === easter.month && day === easter.day) return 'austineaster.png';
   if (day === 1) return 'austinfirst.jpg';
 
-  return `${weekdays[date.getUTCDay()]}.png`;
+  return `${weekdays[weekday]}.png`;
 }
